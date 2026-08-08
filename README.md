@@ -12,6 +12,13 @@
 
 The application focuses on clean layouts, minimal typography, reusable UI components, fashion products, a streamlined checkout process, and a simple payment flow.
 
+![Flutter](https://img.shields.io/badge/Flutter-Framework-02569B?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-Language-0175C2?logo=dart)
+![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+</div>
+
 ---
 
 # 📌 Overview
