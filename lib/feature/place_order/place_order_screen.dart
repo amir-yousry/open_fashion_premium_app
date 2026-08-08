@@ -39,11 +39,11 @@ class PlaceOrderScreen extends StatefulWidget {
 class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
   dynamic _savedAddress;
   dynamic _savedCard;
-  late int selectedQty;
+  late int selectedQuantity;
 
   @override
   void initState() {
-    selectedQty = widget.quantity;
+    selectedQuantity = widget.quantity;
     super.initState();
   }
 
@@ -185,10 +185,10 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                     )
                   : GestureDetector(
                       onTap: _openCard,
-                      child: selectedQuantity(
-                        "Select Payment Method",
-                        Icons.keyboard_arrow_down_sharp,
-                        false,
+                      child: CustomContainerWidget(
+                        text: "Select Payment Method",
+                        icon: Icons.keyboard_arrow_down_sharp,
+                        isFree: false,
                       ),
                     ),
 
