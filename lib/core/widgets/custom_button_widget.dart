@@ -4,21 +4,20 @@ import 'package:gap/gap.dart';
 import 'package:open_fashion_premium_app/core/consts/colors.dart';
 import 'package:open_fashion_premium_app/core/widgets/custom_text_widget.dart';
 
-class Button extends StatelessWidget {
-  const Button({
-    super.key,
-    required this.isSvgg,
-    required this.title,
-    required this.onTap,
-  });
-  final bool isSvgg;
+class CustomButtonWidget extends StatelessWidget {
+  final bool isSvg;
   final String title;
   final Function()? onTap;
 
+  const CustomButtonWidget({
+    super.key,
+    required this.isSvg,
+    required this.title,
+    required this.onTap,
+  });
+
   @override
   Widget build(BuildContext context) {
-    bool isSvg = isSvgg;
-
     return GestureDetector(
       onTap: onTap,
       child: Container(
