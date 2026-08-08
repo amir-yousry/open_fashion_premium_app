@@ -6,9 +6,8 @@ import 'package:open_fashion_premium_app/core/widgets/custom_text_field_widget.d
 import 'package:open_fashion_premium_app/core/widgets/header.dart';
 
 class AddAddress extends StatefulWidget {
-  const AddAddress({super.key, this.editData});
-
   final dynamic editData;
+  const AddAddress({super.key, this.editData});
 
   @override
   State<AddAddress> createState() => _AddAddressState();
