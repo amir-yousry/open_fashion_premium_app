@@ -7,6 +7,7 @@ import 'package:open_fashion_premium_app/core/widgets/custom_appbar_widget.dart'
 import 'package:open_fashion_premium_app/core/widgets/custom_text_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/header.dart';
 import 'package:open_fashion_premium_app/feature/place_order/widgets/custom_container_widget.dart';
+import 'package:open_fashion_premium_app/feature/place_order/widgets/shipping_method_widget.dart';
 
 class PlaceOrderScreen extends StatefulWidget {
   final String image;
@@ -84,7 +85,7 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
               /// Shipping Method
               _savedCard != null && _savedAddress != null
                   ? SizedBox.shrink()
-                  : ShippingMethod(),
+                  : ShippingMethodWidget(),
 
               /// payment Method
               _savedCard != null && _savedAddress != null
