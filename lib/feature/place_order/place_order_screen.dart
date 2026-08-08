@@ -11,6 +11,7 @@ import 'package:open_fashion_premium_app/feature/add_address/add_address_screen.
 import 'package:open_fashion_premium_app/feature/add_card/add_card_screen.dart';
 import 'package:open_fashion_premium_app/feature/place_order/widgets/address_info_widget.dart';
 import 'package:open_fashion_premium_app/feature/place_order/widgets/custom_container_widget.dart';
+import 'package:open_fashion_premium_app/feature/place_order/widgets/custom_dialog_widget.dart';
 import 'package:open_fashion_premium_app/feature/place_order/widgets/shipping_method_widget.dart';
 
 class PlaceOrderScreen extends StatefulWidget {
@@ -227,7 +228,7 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                     context: context,
                     barrierDismissible: false,
                     builder: (context) {
-                      return Dialog(child: CustomDailog());
+                      return Dialog(child: CustomDailogWidget());
                     },
                   );
                 },
