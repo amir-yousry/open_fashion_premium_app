@@ -5,15 +5,15 @@ import 'package:open_fashion_premium_app/core/widgets/custom_button_widget.dart'
 import 'package:open_fashion_premium_app/core/widgets/custom_text_field_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/header.dart';
 
-class AddAddress extends StatefulWidget {
+class AddAddressScreen extends StatefulWidget {
   final dynamic editData;
-  const AddAddress({super.key, this.editData});
+  const AddAddressScreen({super.key, this.editData});
 
   @override
-  State<AddAddress> createState() => _AddAddressState();
+  State<AddAddressScreen> createState() => _AddAddressScreenState();
 }
 
-class _AddAddressState extends State<AddAddress> {
+class _AddAddressScreenState extends State<AddAddressScreen> {
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final addressController = TextEditingController();

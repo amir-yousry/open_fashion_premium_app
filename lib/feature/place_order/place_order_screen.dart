@@ -6,6 +6,10 @@ import 'package:open_fashion_premium_app/core/widgets/custom_button_widget.dart'
 import 'package:open_fashion_premium_app/core/widgets/custom_appbar_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/custom_text_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/header.dart';
+import 'package:open_fashion_premium_app/core/widgets/cart_widget.dart';
+import 'package:open_fashion_premium_app/feature/add_address/add_address_screen.dart';
+import 'package:open_fashion_premium_app/feature/add_card/add_card_screen.dart';
+import 'package:open_fashion_premium_app/feature/place_order/widgets/address_info_widget.dart';
 import 'package:open_fashion_premium_app/feature/place_order/widgets/custom_container_widget.dart';
 import 'package:open_fashion_premium_app/feature/place_order/widgets/shipping_method_widget.dart';
 
@@ -32,6 +36,57 @@ class PlaceOrderScreen extends StatefulWidget {
 }
 
 class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
+  dynamic _savedAddress;
+  dynamic _savedCard;
+  late int selectedQty;
+
+  @override
+  void initState() {
+    selectedQty = widget.quantity;
+    super.initState();
+  }
+
+  /// address
+  void _openAddress(BuildContext context) async {
+    final addressData = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (c) => AddAddressScreen()),
+    );
+
+    if (addressData != null) {
+      setState(() {
+        _savedAddress = addressData;
+      });
+    }
+  }
+
+  void _editAddress() async {
+    final newAddress = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (c) => AddAddressScreen(editData: _savedAddress),
+      ),
+    );
+
+    setState(() {
+      _savedAddress = newAddress;
+    });
+  }
+
+  /// card
+  void _openCard() async {
+    final cardData = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (c) => AddCardScreen()),
+    );
+
+    if (cardData != null) {
+      setState(() {
+        _savedCard = cardData;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +114,7 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                 child: Column(
                   children: [
                     _savedAddress != null
-                        ? AddressInfo(
+                        ? AddressInfoWidget(
                             savedAddress: _savedAddress,
                             onTap: _editAddress,
                           )
@@ -165,7 +220,7 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
               ),
               Gap(20),
               CustomButtonWidget(
-                isSvgg: true,
+                isSvg: true,
                 title: "Place order",
                 onTap: () {
                   showDialog(

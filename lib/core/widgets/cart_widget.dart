@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:open_fashion_premium_app/core/consts/colors.dart';
 import 'package:open_fashion_premium_app/core/widgets/custom_text_widget.dart';
-import 'package:open_fashion_premium_app/feature/checkout/widgets/quantity_widget.dart';
+import 'package:open_fashion_premium_app/core/widgets/quantity_widget.dart';
 
 class CartWidget extends StatefulWidget {
+  final String image, name, description;
+  final int price;
+  final Function(int) onChanged;
+  final int quantity;
+
   const CartWidget({
     super.key,
     required this.image,
     required this.name,
-    required this.descp,
+    required this.description,
     required this.price,
     required this.onChanged,
-    required this.qty,
+    required this.quantity,
   });
-  final String image, name, descp;
-  final int price;
-  final Function(int) onChanged;
-  final int qty;
 
   @override
   State<CartWidget> createState() => _CartWidgetState();
@@ -29,7 +30,7 @@ class _CartWidgetState extends State<CartWidget> {
   @override
   void initState() {
     number = 1;
-    number = widget.qty;
+    number = widget.quantity;
     super.initState();
   }
 
@@ -54,7 +55,7 @@ class _CartWidgetState extends State<CartWidget> {
             SizedBox(
               width: size.width * 0.6,
               child: CustomText(
-                text: widget.descp.toUpperCase(),
+                text: widget.description.toUpperCase(),
                 spacing: 2,
                 color: AppColors.primary,
                 size: 11,
