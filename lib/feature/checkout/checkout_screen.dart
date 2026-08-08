@@ -5,7 +5,7 @@ import 'package:open_fashion_premium_app/core/widgets/custom_button_widget.dart'
 import 'package:open_fashion_premium_app/core/widgets/custom_appbar_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/custom_text_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/header.dart';
-import 'package:open_fashion_premium_app/feature/checkout/widgets/cart_widget.dart';
+import 'package:open_fashion_premium_app/core/widgets/cart_widget.dart';
 import 'package:open_fashion_premium_app/feature/checkout/widgets/promo_widget.dart';
 import 'package:open_fashion_premium_app/feature/place_order/place_order_screen.dart';
 
@@ -28,7 +28,7 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
-  int selectedQty = 1;
+  int selectedQuantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +42,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             CartWidget(
               image: widget.image,
               name: widget.name,
-              descp: widget.description,
+              description: widget.description,
               price: widget.price,
-              qty: selectedQty,
+              quantity: selectedQuantity,
               onChanged: (v) {
                 setState(() {
-                  selectedQty = v;
+                  selectedQuantity = v;
                 });
               },
             ),
@@ -58,7 +58,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               children: [
                 CustomText(text: "Est. Total", color: AppColors.primary),
                 CustomText(
-                  text: "\$ ${widget.price * selectedQty}",
+                  text: "\$ ${widget.price * selectedQuantity}",
                   color: Colors.red.shade200,
                 ),
               ],
@@ -76,9 +76,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         image: widget.image,
                         name: widget.name,
                         description: widget.description,
-                        quantity: selectedQty,
+                        quantity: selectedQuantity,
                         price: widget.price,
-                        total: widget.price * selectedQty,
+                        total: widget.price * selectedQuantity,
                       );
                     },
                   ),
