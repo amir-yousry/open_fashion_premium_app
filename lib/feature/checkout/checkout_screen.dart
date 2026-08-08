@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:open_fashion_premium_app/core/consts/colors.dart';
-import 'package:open_fashion_premium_app/core/widgets/button_widget.dart';
+import 'package:open_fashion_premium_app/core/widgets/custom_button_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/custom_appbar_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/custom_text_widget.dart';
 import 'package:open_fashion_premium_app/core/widgets/header.dart';
@@ -64,8 +64,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ],
             ),
             Gap(20),
-            Button(
-              isSvgg: true,
+            CustomButtonWidget(
+              isSvg: true,
               title: "Checkout",
               onTap: () {
                 Navigator.push(
