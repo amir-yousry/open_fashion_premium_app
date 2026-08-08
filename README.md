@@ -27,8 +27,6 @@ The application focuses on clean layouts, minimal typography, reusable UI compon
   <img src="assets/screenshots/preview.jpg" alt=" Open Fashion Flutter App">
 </p>
 
-<div align="center">
-
 
 **Open Fashion** is a Flutter-based fashion shopping application that provides users with a complete shopping journey — from exploring the home screen to successfully placing an order.
 
