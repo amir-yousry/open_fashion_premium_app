@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:open_fashion_premium_app/feature/splash/splash_screen.dart';
+import 'package:open_fashion_premium_app/feature/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const SplashScreen(),
+      home: const HomeScreen(),
     );
   }
 }
