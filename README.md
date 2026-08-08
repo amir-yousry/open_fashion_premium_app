@@ -172,7 +172,7 @@ A simple form for adding and managing the shipping address.
 A modern payment form for adding card information.
 
 <p align="center">
-<img src="assets/screenshots/add_card_screen.png" width="280">
+<img src="assets/screenshots/add_card_screen.jpg" width="280">
 </p>
 
 ---
